@@ -1,0 +1,15 @@
+On the balloon we aim for data logging instead of real-time transmission. The
+balloon is to be brought down periodically to collect data. Data is collected
+using an onboard uLog.
+
+We use BMP085 to measure absolute pressure. This also provides the temperature
+value. BMP085 uses a Two Wire protocol for data transmission and operates
+at 3.3V.  Analog Pin 5 is used for SCL and Analog Pin 4 for SDA.
+
+We use HH10D to measure relative humidity. A Two Wire interface is needed
+to read calibration coefficients from its onboard EEPROM. However we 
+read it for once, record it in the sensor code, and never use the Two Wire
+interface thereafter. The data is output as encoded frequency and output through
+the middle pin.
+
+uLog is a Serial Logger. Data is send through the TX line of the microcontroller
