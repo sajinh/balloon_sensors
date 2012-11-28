@@ -30,7 +30,7 @@ float pressMB;
 float rh;
 int scount=0;
 int tcount=0;
-int sampling_secs=80;
+int sampling_secs=304;
 int nwake_up=sampling_secs/8;
 
 // These are for uLog
